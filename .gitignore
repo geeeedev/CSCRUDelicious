@@ -1,0 +1,21 @@
+# .NET Core
+.DS_Store
+Migrations/
+bin/
+obj/
+#*.png
+*.sql
+appsettings.json
+
+
+# Python / Django
+__pycache__/
+.vscode
+venv/
+veDjango/
+db.sqlite3
+requirements.txt
+
+# VS Code
+.vscode
+.vscode/

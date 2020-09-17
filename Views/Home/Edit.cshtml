@@ -1,0 +1,75 @@
+﻿@{
+ViewData["Title"] = "Home - Edit";
+}
+
+
+@model Dish
+
+<div>
+    <div class="text-center">
+        <h3 class="">Edit Dish #@Model.DishId</h3>
+    </div>
+    <div class="d-flex justify-content-left pink">
+        <p class=""></p>
+        <a a asp-action="Index" asp-controller="Home">Home</a>
+    </div>
+    <hr>
+
+    <form asp-route-dishId="@Model.DishId" asp-action="Update" asp-controller="Home"  method="post">
+        <div class="row">
+            <div class="form-group col-sm ">
+                <label asp-for="Chef"></label>
+                <span asp-validation-for="Chef" class="salmon"></span>
+                <input asp-for="Chef" class="form-control mb-3">
+
+                <label asp-for="Name"></label>
+                <span asp-validation-for="Name" class="salmon"></span>
+                <input asp-for="Name" class="form-control mb-3">
+
+                <label asp-for="Calories"></label>
+                <span asp-validation-for="Calories" class="salmon"></span>
+                <input asp-for="Calories" class="form-control mb-3">
+
+                @* <input type=hidden asp-for="CreatedAt" class="form-control mb-3"> *@
+            </div>
+
+            <div class="form-group col-sm ">
+                <label asp-for="Tastiness"></label>
+                <span asp-validation-for="Tastiness" class="salmon"></span>
+                <select asp-for="Tastiness" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm ">
+                <label asp-for="Description"></label>
+                <span asp-validation-for="Description" class="salmon"></span>
+                <textarea asp-for="Description" class="form-control" cols="10" rows="3"></textarea>
+
+                <button type="submit" class="btn btn-outline-warning mt-3">Update Dish</button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-warning mt-3">Cancel</a>
+                @* <input type="submit" value="Update Dish"> *@
+            </div>
+
+        </div>
+    </form>
+
+
+
+
+</div>
+
+@* Template: ASP.Net Core form with Validation
+<form asp-route-xxid="" asp-action="Create" asp-controller="Home" method="POST">
+    <div class="form-group">
+        <label asp-for=""></label>
+        <span asp-validation-for="" class="text-danger"></span>
+        <input asp-for="" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-outline-warning mt-3">Create</button>
+</form> *@

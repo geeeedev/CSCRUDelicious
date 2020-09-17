@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home - All Dishes";
+}
+
+
+
+@model List<Dish>;
+
+<div>
+    <div class="text-center">
+        <h3 class="">Welcome to CRUDelicious!</h3>
+    </div>
+    <div class="d-flex justify-content-between pink">
+        <p class="">Check out some recent dishes!</p>
+        <a asp-action="New" asp-controller="Home">Add a Dish</a>
+        @* <a href="/Home/New">Add a Dish</a> *@
+    </div>
+    <hr>
+
+    @foreach (Dish d in Model)
+    {
+        <p><a asp-route-id="@d.DishId" asp-action="Details" asp-controller="Home">@d.Name</a><br> 
+            <small>by @d.Chef</small><br>
+            <small>created at @d.CreatedAt</small><br> 
+            <small>updated at @d.UpdatedAt</small> 
+        </p>
+    }
+
+
+</div>
+
+
